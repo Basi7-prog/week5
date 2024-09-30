@@ -51,6 +51,6 @@ async def main():
         for channel in channels:
             await scrape_channel(client, channel, writer, media_dir)
             print(f"Scraped data from {channel}")
-
+    
 with client:
     client.loop.run_until_complete(main())
