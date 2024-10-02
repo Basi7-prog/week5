@@ -17,6 +17,11 @@ def clean(row):
                 new_data+=a
                 
     return new_data
+
+def clean_repeatitive_words(df,col):
+    pattern=r'.*ቴሌግራም.*\n*.*በአዲስ\s*ነገረ\s*ሁሌም\s*ቀዳሚዏች\s*ነን.*\n*'
+    df[col]=df[col].str.replace(pattern,'', regex=True)
+    return df
         
 def tokenize(df,col):
     df['clean data']=df[col].apply(clean)
