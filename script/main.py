@@ -9,16 +9,15 @@ def clean(row):
                 space=True
                 breaker=True
                 new_data+=a
-            elif(ord(a)==32 and space):
+            elif(a==' ' and space):
                 space=False
                 new_data+=a
-            elif(ord(a)==10 and breaker):
+            elif(a=='\n' and breaker):
                 breaker=False
                 new_data+=a
                 
     return new_data
-
-
+        
 def tokenize(df,col):
     df['clean data']=df[col].apply(clean)
     return df
